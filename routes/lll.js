@@ -26,7 +26,7 @@ router.post('/createuser', [
             return res.status(400).json({ success, error: "SOrry user with email already exist" })
         }
         const salt = await bcrypt.genSalt(10);
-        const secPass = await bcrypt.hash(req.body.password, salt);
+        secPass = await bcrypt.hash(req.body.password, salt);
 
 
 
@@ -72,7 +72,7 @@ router.post('/login', [
 
     const { email, password } = req.body;
     try {
-        let user = await User.findOne({ email: email });
+        let user = await User.findOne({ email });
         if (!user) {
             success = false;
             return res.status(400).json({ error: "PLease try to login with correct credentails" });

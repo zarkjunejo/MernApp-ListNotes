@@ -1,12 +1,12 @@
 {
-  "name": "inotebook-backend",
+  "name": "listnotes",
   "version": "1.0.0",
-  "description": "inotebook - your notebook on the cloud",
+  "description": "listnotes ..keep your work managed",
   "main": "index.js",
   "scripts": {
     "test": "test server",
     "start":"node app.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install   && npm run build "
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client   && npm run build --prefix client "
 
   },
   "author": "",
